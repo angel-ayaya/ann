@@ -1,0 +1,138 @@
+/* Estilos base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+  
+body {
+    font-family: "Rethink Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+    background-color: #313638;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/NzsBG49Il/videoblocks-8-bit-looping-hearts-background_bpiv5cwqu_thumbnail-1080_01.png');
+}
+
+h1{
+    font-size: 1em;
+    color: white;
+    text-align: center;
+    margin-bottom: 1em;
+}
+p
+{
+    font-size: .7em;
+}
+
+  
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.grid {
+    display: grid;
+    height: 90vh;
+    width: 50vw;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 8px;
+}
+  
+.bento-card {
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'M PLUS 2 Variable', sans-serif;
+    transition: transform 0.6s ease, box-shadow 0.6s ease; /* Transiciones */
+    transform-style: preserve-3d; /* Para la rotación en 3D */
+    perspective: 1000px;
+    cursor: pointer;
+}
+  
+.bento-card img,
+.bento-card .back-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Ocultar la cara posterior */
+}
+  
+.bento-card img {
+    object-fit: cover;
+}
+  
+.bento-card .back-image {
+    background-color: rgba(0, 0, 0, 0.8); /* Color sólido (puedes cambiar el color) */
+    display: flex; /* Para centrar el texto */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    transform: rotateY(180deg); /* Rotación de 180 grados */
+    backface-visibility: hidden; /* Ocultar la cara posterior */
+  }
+  
+.back-text {
+    color: white; /* Color del texto */
+    font-size: 1.5em; /* Tamaño del texto */
+    text-align: center; /* Centrar el texto */
+}
+
+/* Efecto cuando la tarjeta está rotada */
+.bento-card.rotated {
+    transform: rotateY(180deg); /* Efecto de rotación al hacer clic */
+    box-shadow: 0 0 15px rgba(221, 194, 194, 0.7), 0 0 30px rgba(243, 192, 192, 0.5); /* Efecto de glow */
+}
+  
+.blur {
+    filter: blur(8px); /* Desenfoque más fuerte */
+    pointer-events: none; /* No permite interactuar con las tarjetas desenfocadas */
+    transition: filter 0.4s ease, transform 0.4s ease; /* Transiciones suaves */
+}
+
+/* Estilos de las tarjetas individuales */
+.salmon {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+  
+.broccoli {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+  
+.tamago {
+    grid-column: span 1;
+    grid-row: span 4;
+}
+  
+.pork {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+  
+.edamame {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+  
+.tomato {
+    grid-column: span 3;
+    grid-row: span 2;
+}
